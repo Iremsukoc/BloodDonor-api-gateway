@@ -6,6 +6,7 @@ const port = 3001;
 
 app.use("/donor-service", createProxyMiddleware({
     target: "https://blooddonor-donorservice-iremsu.onrender.com/",
+    changeOrigin: true,
     pathRewrite: {
         "^/donor-service":"",
     }
@@ -14,6 +15,7 @@ app.use("/donor-service", createProxyMiddleware({
 
 app.use("/blood-search-service", createProxyMiddleware({
     target: "https://blooddonor-bloodsearchservice-iremsu.onrender.com/",
+    changeOrigin:true,
     pathRewrite: {
         "^/blood-search-service":"",
     }
